@@ -6,53 +6,56 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class m4_calc {
-
     private static Logger logger = Logger.getLogger(m4_calc.class.getName());
 
-    public static void main(String[] args){
-        try(PrintWriter out = new PrintWriter("file.txt")) {
-        
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Input first number: ");
-        int num1 = sc.nextInt();
+    public static void main(String[] args) {
 
-        System.out.print("Input second number: ");
-        int num2 = sc.nextInt();
+        double num1;
+        double num2;
+        double res = 0;
+        char act;
 
-        System.out.print("Action: ");
-        String act = sc.nextLine();
-        act = sc.nextLine();
-        
-        int res;
-        switch (act) {
-            case "+": 
-                res = num1 + num2;
-                System.out.print("Result: " + res);
-                break;
-            case "-": 
-                res = num1 - num2;
-                System.out.print("Result: " + res);
-                break;
-            case "*": 
-                res = num1 * num2;
-                System.out.print("Result: " + res);
-                break;
-            case "/":
-                if(num2 == 0)
-                    System.out.print("Error!");
-                else {
-                    res = num1 / num2;
-                    System.out.print("Result: " + res);
-                }
-                break;
-            case "%": 
-                res = num1 % num2;
-                System.out.print("Result: " + res);
-                break;
+        try (PrintWriter out = new PrintWriter("file.txt")) {
+
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Input first number: ");
+            num1 = sc.nextInt();
+
+            System.out.print("Input second number: ");
+            num2 = sc.nextInt();
+
+            System.out.print("Action: ");
+            act = sc.next().charAt(0);;
+
+            switch (act) {
+                case '+':
+                    res = num1 + num2;
+                    break;
+                case '-':
+                    res = num1 - num2;
+                    break;
+                case '*':
+                    res = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 == 0)
+                        System.out.print("Error!");
+                    else {
+                        res = num1 / num2;
+                    }
+                    break;
+                case '%':
+                    res = num1 % num2;
+                    break;
+                default:
+                    System.out.printf("Error!");
+                    return;
             }
-        logger.info("Результат записан в файл: file.txt");
-        }   
-        catch (FileNotFoundException e) {
+            System.out.println(("Result: " + res));
+            out.printf("%f %c %f = " + res + "\n", num1, act, num2);
+
+            logger.info("Результат записан в файл: file.txt");
+        } catch (FileNotFoundException e) {
             logger.info(e.getMessage());
         }
     }
