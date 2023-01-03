@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class m2_sorting {
+public class M2Sorting {
     private static Logger logger = Logger.getLogger(m2_sorting.class.getName());
 
     public static void main(String[] args) throws SecurityException, IOException {
