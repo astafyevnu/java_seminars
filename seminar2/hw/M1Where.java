@@ -1,6 +1,6 @@
 package seminar2.hw;
 
-public class m1_where {
+public class M1Where {
     public static void main(String[] args) {
         String str = "{\"name\":\"Ivanov\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}";
         StringBuilder request = new StringBuilder("select * from students where");
