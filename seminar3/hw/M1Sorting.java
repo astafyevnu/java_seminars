@@ -5,16 +5,20 @@ import java.util.Scanner;
 public class M1Sorting {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Введите элементы массива через пробел: ");
-        String rawInput = sc.nextLine();
-        String[] array = rawInput.split(" ");
-        int[] arr = new int[array.length];
-        for (int i = 0; i < arr.length; i++)
-            arr[i] = (Integer.parseInt(array[i]));
-        print(arr, "Исходный массив:");
-        Divine(arr);
-        print(arr, "Отсортированный массив:");
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Введите элементы массива через пробел: ");
+            String rawInput = sc.nextLine();
+            String[] array = rawInput.split(" ");
+            int[] arr = new int[array.length];
+            for (int i = 0; i < arr.length; i++)
+                arr[i] = (Integer.parseInt(array[i]));
+            print(arr, "Исходный массив:");
+            Divine(arr);
+            print(arr, "Отсортированный массив:");
+        } catch (NumberFormatException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
     }
 
