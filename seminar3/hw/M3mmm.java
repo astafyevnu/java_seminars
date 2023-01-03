@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Collections;
 import java.util.Random;
 
-public class m3_mmm {
+public class M3mmm {
 
     public static void main(String[] args) {
         List<Integer> lst = new ArrayList<>();

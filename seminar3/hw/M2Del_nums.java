@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class m2_del_nums {
+public class M2Del_nums {
     public static void main(String[] args) {
 
         List<Integer> arr = new ArrayList<>();

@@ -2,7 +2,7 @@ package seminar3.hw;
 
 import java.util.Scanner;
 
-public class m1_sorting {
+public class M1Sorting {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
