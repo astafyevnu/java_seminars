@@ -16,13 +16,12 @@ public class M1Sorting {
             Divine(arr);
             print(arr, "Отсортированный массив:");
         } catch (NumberFormatException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
     }
 
-    public static void Divine(int[] arr) {
+    public static void divine(int[] arr) {
         if (arr.length <= 1)
             return;
         int middleIndex = arr.length / 2;
@@ -34,12 +33,12 @@ public class M1Sorting {
         for (int i = middleIndex; i < arr.length; i++)
             second[i - middleIndex] = arr[i];
 
-        Divine(first);
-        Divine(second);
+        divine(first);
+        divine(second);
         Merge(arr, first, second);
     }
 
-    public static void Merge(int[] arr, int[] first, int[] second) {
+    public static void merge(int[] arr, int[] first, int[] second) {
         int firstIndex = 0;
         int secondIndex = 0;
         int originalIndex = 0;
