@@ -14,6 +14,10 @@ public class ListNames {
     public static void main(String[] args) throws FileNotFoundException {
         ListNames names = new ListNames();
         Map<String, Integer> book = names.getMap("D:\\2qr\\Java\\java_seminars\\seminar5\\staff.txt");
+        
+       // Чтобы код работал на всех устройствах следует писать относительный путь
+// "seminar5/staff.txt"
+        
         List<Map.Entry<String, Integer>> lst = new ArrayList<>(book.entrySet());
         lst.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
         lst.forEach(System.out::println);
