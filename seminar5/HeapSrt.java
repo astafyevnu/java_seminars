@@ -11,6 +11,8 @@ public class HeapSrt {
         Random random = new Random();
         IntStream.range(0, 10)
         .forEach(index -> arr[index] = random.nextInt(30));
+        // Можно сократить
+// int[] arr = new Random().ints(0,30).limit(10).toArray();
         
         System.out.print("\nИсходный массов: " + Arrays.toString(arr));
         
